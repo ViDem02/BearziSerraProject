@@ -1,0 +1,74 @@
+<html>
+<style>
+        body {
+            font-family: "Courier New",Courier,monospace;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+        input[type=text] {
+            font-family: "Courier New",Courier,monospace;
+            font-weight: bold;
+            font-size: 20px;
+            textbox-align: center;
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        input[type=submit] {
+            textbox-align: center;
+            width: 10%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+            font-family: "Courier New",Courier,monospace;
+            font-weight: bold;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            background-color: mediumSeaGreen;
+        }
+    </style>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Chart.js demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+</head>
+
+    
+<body>
+    <h1>Chart.js Sample</h1>
+    <form action="/writeRGB" method="POST">
+        <label>R:</label><br>
+        <input type="text" name="led1"><br>
+        <label>G:</label><br>
+        <input type="text" name="led2"><br>
+        <label>B:</label><br>
+        <input type="text" name="led3"><br>
+        <input id="bt1" type="submit" name="submit"><br>
+    </form>
+    <form action="/on1" method="POST"> 
+        <input id="bt2" type="submit" name="on1" value="Accendi led 1">
+    </form>
+    <form action="/off1" method="POST"> 
+        <input id="bt2" type="submit" name="off1" value="Spegni led 1">
+    </form>
+    <form action="/on2" method="POST"> 
+        <input id="bt2" type="submit" name="on2" value="Accendi led 2">
+    </form>
+    <form action="/off2" method="POST"> 
+        <input id="bt2" type="submit" name="off2" value="Spegni led 2">
+    </form>
+    <form action="/home" method="GET"> 
+        <input id="bt2" type="submit" name="home" value="Get new data">
+    </form>
+    <form action="/" method="GET">
+        <label><%= state  %></label><br>
+    </form>
+</body>

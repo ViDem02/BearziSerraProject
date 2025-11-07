@@ -1,0 +1,22 @@
+#!/usr/bin/pythol
+import os
+from serial import Serial
+connected = false
+ser = serial.Serial('/dev/ttyACM0', 9600)
+while 1:
+    exists = os.path.isfile('/home/pi/sitoInternet/instruction1.txt')
+    if exists:
+        fp = open('instructions1.txt','r')
+        lettura = f.read()
+        if lettura is not 'N'
+            ser.write('s');
+            while ser.read() != 'G'
+                ser.read()
+            ser.write(lettura)
+            close(fp)
+            fp = open('instructions1.txt','w')
+            fp.write('N')
+            close(fp)
+            print('fileSalvato')
+    else:
+        print('The file doesnt exsist')

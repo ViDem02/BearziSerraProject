@@ -1,0 +1,98 @@
+<html>
+<style>
+    body {
+        font-family: "Courier New",Courier,monospace;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+    input[type=text] {
+        font-family: "Courier New",Courier,monospace;
+        font-weight: bold;
+        font-size: 20px;
+        textbox-align: center;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    input[type=submit] {
+        textbox-align: center;
+        width: 10%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: none;
+        font-family: "Courier New",Courier,monospace;
+        font-weight: bold;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        background-color: mediumSeaGreen;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Chart.js demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <form action="/" method="POST">
+        <label>R:</label><br>
+        <input type="text" name="led1"><br>
+        <label>G:</label><br>
+        <input type="text" name="led2"><br>
+        <label>B:</label><br>
+        <input type="text" name="led3"><br>
+        <input id="bt" type="submit" name="submit"><br>
+    </form>
+    <form action="/" method="GET">
+        <label><%= state  %></label><br>
+    </form>
+    
+    <div><canvas id="myChart" width="400" height="400"></canvas></div>
+    <script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>

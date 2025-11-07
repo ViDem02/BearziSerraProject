@@ -1,0 +1,5 @@
+./attuatore1.py: 1: ./attuatore1.py: import: not found
+./attuatore1.py: 2: ./attuatore1.py: import: not found
+from: can't read /var/mail/serial
+./attuatore1.py: 4: ./attuatore1.py: connected: not found
+./attuatore1.py: 5: ./attuatore1.py: Syntax error: "(" unexpected
